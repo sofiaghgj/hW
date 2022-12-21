@@ -1,3 +1,29 @@
-<h1>найдено кандидатов {{bill}}</h2>
-<p><a href="/candidate/<x>">{{name}}</a></p>
-<p><a href="/candidate/<x>">{{name}}</a></p>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Поиск</title>
+</head>
+<body>
+    <h1>найдено кандидатов {{ bill }}</h1>
+        {% for i in info %}
+        <p><a href="/candidate/{{ info.id }}">{{ info.name }}</a></p>
+        {% endfor %}
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Все кандидаты</title>
+</head>
+<body>
+
+<h1>Все кандидаты {{info | count}}</h1>
+{% for candidate in info %}
+<p><a href="/candidate/{{ candidate.id }}">{{ candidate.name }}</a></p>
+{% endfor %}
+
+</body>
+</html>

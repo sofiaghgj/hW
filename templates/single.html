@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -9,23 +6,13 @@
 </head>
 <body>
 
-<h1>Все кандидаты</h1>
-{% for candidate in candidates %}
-<p><a href="/candidate/{{candidate.id}}">{{candidate.name}}</a></p>
-{% endfor %}
-
-
-<h1>{{candidates.name}}</h1>
-<p>{{candidates.position}}</p>
-<img src="(картинка)" width=200/>
-<img src="{{candidates.picture}}" alt="Фотка" />
-<p>{{candidates.skills}}</p>
+<h1>{{ info.name }}</h1>
+<p>{{ info.position }}</p>
+<img src="{{ info.picture }}" width=200/>
+<p>{{ info.skills }}</p>
 
 </body>
 </html>
 
-<h1>{{name}}</h1>
-<p>{{position}}</p>
-<img src="(картинка)" width=200/>
-<p>{{skills}}</p>
+
 

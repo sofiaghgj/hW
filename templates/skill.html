@@ -1,3 +1,14 @@
-<h1>Найдено со скиллом X: 2/h2>
-<p><a href="/candidate/<x>">Имя кандидата</a></p>
-<p><a href="/candidate/<x>">Имя кандидата</a></p>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Поиск</title>
+</head>
+<body>
+    <h1>Найдено со скиллом {{ skill }}: {{ bill }}</h1>
+        {% for i in info %}
+        <p><a href="/candidate/{{ i.id }}">{{ i.name }}</a></p>
+        {% endfor %}
+</body>
+</html>
+

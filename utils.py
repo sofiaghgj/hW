@@ -1,39 +1,32 @@
 import json
 
-def load_candidates_from_json(file) -> list[dict[str, int | str]]:
-    with open(file, 'r', encoding='utf-8') as f:
-        return json.load(f)
 
-def load_candidates():
-    return load_candidates_from_json('candidates.json')
+def load_candidates() -> list[dict[str, int | str]]:
+    with open('candidates.json', 'r', encoding='utf-8') as f:
+        return json.load(f)
 
 
 def get_candidate(candidate_id):
     candidates = load_candidates()
-    for i in candidates:
-        if i['id'] == candidate_id:
-            return i
+    for candidate in candidates:
+        if candidate['id'] == candidate_id:
+            return candidate
 
 
 def get_candidates_by_name(candidate_name):
-    candidat = load_candidates()
-    for i in candidat:
-        if i['name'] == candidate_name:
-            return i
+    candidates = load_candidates()
+    people = []
+    for i in candidates:
+        if candidate_name.lower() in i['name'].lower():
+            people.append(i)
+    print(people)
+    return people
 
 
 def get_by_skill(skill_name):
-    candidat = load_candidates()
+    candidate = load_candidates()
     text = []
-    for i in candidat:
+    for i in candidate:
         if skill_name.lower() in i['skills'].lower():
             text.append(i)
     return text
-
-
-
-
-
-
-
-
