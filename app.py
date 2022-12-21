@@ -19,14 +19,12 @@ def single(x):
 @app.route("/search/<candidate_name>")
 def search(candidate_name):
     info = get_candidates_by_name(candidate_name)
-    print(info)
     return render_template('search.html', info=info, bill=len(info))
 
 
 @app.route("/skill/<skill_name>")
 def skills(skill_name):
     info = get_by_skill(skill_name)
-    print(info)
     return render_template('skill.html', info=info, bill=len(info), skill_name=skill_name)
 
 """@app.route("/skill/<skill_name>")
